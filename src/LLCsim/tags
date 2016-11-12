@@ -1,0 +1,90 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ACCESS_IFETCH	crc_cache_defs.h	/^    ACCESS_IFETCH      = 0,$/;"	e	enum:__anon2
+ACCESS_LOAD	crc_cache_defs.h	/^    ACCESS_LOAD        = 1,$/;"	e	enum:__anon2
+ACCESS_MAX	crc_cache_defs.h	/^    ACCESS_MAX         = 7$/;"	e	enum:__anon2
+ACCESS_PREFETCH	crc_cache_defs.h	/^    ACCESS_PREFETCH    = 5,$/;"	e	enum:__anon2
+ACCESS_STORE	crc_cache_defs.h	/^    ACCESS_STORE       = 2,$/;"	e	enum:__anon2
+ACCESS_UNSUPPORT0	crc_cache_defs.h	/^    ACCESS_UNSUPPORT0  = 3,$/;"	e	enum:__anon2
+ACCESS_UNSUPPORT1	crc_cache_defs.h	/^    ACCESS_UNSUPPORT1  = 4,$/;"	e	enum:__anon2
+ACCESS_WRITEBACK	crc_cache_defs.h	/^    ACCESS_WRITEBACK   = 6,$/;"	e	enum:__anon2
+ADDRINT	utils.h	/^#define ADDRINT /;"	d
+AccessTypes	crc_cache_defs.h	/^} AccessTypes;$/;"	t	typeref:enum:__anon2
+Addr_t	utils.h	/^#define Addr_t /;"	d
+BITVECTOR	utils.h	/^#define BITVECTOR /;"	d
+CACHE_REPLACEMENT_STATE	replacement_state.cpp	/^CACHE_REPLACEMENT_STATE::CACHE_REPLACEMENT_STATE( UINT32 _sets, UINT32 _assoc, UINT32 _pol )$/;"	f	class:CACHE_REPLACEMENT_STATE
+CACHE_REPLACEMENT_STATE	replacement_state.h	/^class CACHE_REPLACEMENT_STATE$/;"	c
+COUNTER	utils.h	/^#define COUNTER /;"	d
+CRC_CACHE	crc_cache.cpp	/^CRC_CACHE::CRC_CACHE( UINT32 _cacheSize, UINT32 _assoc, UINT32 _tpc, UINT32 _linesize, UINT32 _pol ) $/;"	f	class:CRC_CACHE
+CRC_CACHE	crc_cache.h	/^class CRC_CACHE$/;"	c
+CRC_CACHE_DEFS_H	crc_cache_defs.h	/^#define CRC_CACHE_DEFS_H$/;"	d
+CRC_CACHE_H	crc_cache.h	/^#define CRC_CACHE_H$/;"	d
+CRC_CeilLog2	utils.h	/^static inline INT32 CRC_CeilLog2(UINT32 n)$/;"	f
+CRC_FloorLog2	utils.h	/^static inline INT32 CRC_FloorLog2(UINT32 n)$/;"	f
+CRC_REPL_BRRIP	replacement_state.h	/^    CRC_REPL_BRRIP      = 3$/;"	e	enum:__anon3
+CRC_REPL_LRU	replacement_state.h	/^    CRC_REPL_LRU        = 0,$/;"	e	enum:__anon3
+CRC_REPL_RANDOM	replacement_state.h	/^    CRC_REPL_RANDOM     = 1,$/;"	e	enum:__anon3
+CRC_REPL_SRRIP	replacement_state.h	/^    CRC_REPL_SRRIP      = 2,$/;"	e	enum:__anon3
+CacheInspect	crc_cache.cpp	/^bool CRC_CACHE::CacheInspect( UINT32 tid, Addr_t PC, Addr_t paddr, UINT32 accessType ) $/;"	f	class:CRC_CACHE
+GetSetIndex	crc_cache.h	/^    UINT32 GetSetIndex( Addr_t addr ) { return ((addr >> lineShift) & indexMask); }$/;"	f	class:CRC_CACHE
+GetTag	crc_cache.h	/^    Addr_t GetTag( Addr_t addr ) { return ((addr >> lineShift) >> indexShift); }$/;"	f	class:CRC_CACHE
+GetVictimInSet	crc_cache.cpp	/^INT32 CRC_CACHE::GetVictimInSet( UINT32 tid, UINT32 setIndex, Addr_t PC, Addr_t paddr, UINT32 accessType ) $/;"	f	class:CRC_CACHE
+GetVictimInSet	replacement_state.cpp	/^INT32 CACHE_REPLACEMENT_STATE::GetVictimInSet( UINT32 tid, UINT32 setIndex, const LINE_STATE *vicSet, UINT32 assoc,$/;"	f	class:CACHE_REPLACEMENT_STATE
+Get_LRU_Victim	replacement_state.cpp	/^INT32 CACHE_REPLACEMENT_STATE::Get_LRU_Victim( UINT32 setIndex )$/;"	f	class:CACHE_REPLACEMENT_STATE
+Get_Random_Victim	replacement_state.cpp	/^INT32 CACHE_REPLACEMENT_STATE::Get_Random_Victim( UINT32 setIndex )$/;"	f	class:CACHE_REPLACEMENT_STATE
+Get_SRRIP_Victim	replacement_state.cpp	/^INT32 CACHE_REPLACEMENT_STATE::Get_SRRIP_Victim( UINT32 setIndex )$/;"	f	class:CACHE_REPLACEMENT_STATE
+INT32	utils.h	/^#define INT32 /;"	d
+IS_STORE	crc_cache_defs.h	/^#define IS_STORE(/;"	d
+IncrementTimer	replacement_state.h	/^    void   IncrementTimer() { mytimer++; } $/;"	f	class:CACHE_REPLACEMENT_STATE
+InitCache	crc_cache.cpp	/^void CRC_CACHE::InitCache()$/;"	f	class:CRC_CACHE
+InitCacheReplacementState	crc_cache.cpp	/^void CRC_CACHE::InitCacheReplacementState()$/;"	f	class:CRC_CACHE
+InitReplacementState	replacement_state.cpp	/^void CACHE_REPLACEMENT_STATE::InitReplacementState()$/;"	f	class:CACHE_REPLACEMENT_STATE
+InitStats	crc_cache.cpp	/^void CRC_CACHE::InitStats()$/;"	f	class:CRC_CACHE
+LINE_REPLACEMENT_STATE	replacement_state.h	/^} LINE_REPLACEMENT_STATE;$/;"	t	typeref:struct:__anon4
+LINE_STATE	crc_cache_defs.h	/^} LINE_STATE;$/;"	t	typeref:struct:__anon1
+LRUstackposition	replacement_state.h	/^    UINT32  LRUstackposition;$/;"	m	struct:__anon4
+LookupAndFillCache	crc_cache.cpp	/^bool CRC_CACHE::LookupAndFillCache( UINT32 tid, Addr_t PC, Addr_t paddr, UINT32 accessType ) $/;"	f	class:CRC_CACHE
+LookupSet	crc_cache.cpp	/^INT32 CRC_CACHE::LookupSet( UINT32 setIndex, Addr_t tag )$/;"	f	class:CRC_CACHE
+PrintStats	crc_cache.cpp	/^ostream & CRC_CACHE::PrintStats(ostream &out)$/;"	f	class:CRC_CACHE
+PrintStats	replacement_state.cpp	/^ostream & CACHE_REPLACEMENT_STATE::PrintStats(ostream &out)$/;"	f	class:CACHE_REPLACEMENT_STATE
+REPL_STATE_H	replacement_state.h	/^#define REPL_STATE_H$/;"	d
+RRPV	replacement_state.h	/^    UINT32  RRPV;$/;"	m	struct:__anon4
+ReplacemntPolicy	replacement_state.h	/^} ReplacemntPolicy;$/;"	t	typeref:enum:__anon3
+SetReplacementPolicy	replacement_state.h	/^    void   SetReplacementPolicy( UINT32 _pol ) { replPolicy = _pol; } $/;"	f	class:CACHE_REPLACEMENT_STATE
+ThreadDemandHitStats	crc_cache.h	/^    COUNTER ThreadDemandHitStats( UINT32 tid )$/;"	f	class:CRC_CACHE
+ThreadDemandLookupStats	crc_cache.h	/^    COUNTER ThreadDemandLookupStats( UINT32 tid )$/;"	f	class:CRC_CACHE
+ThreadDemandMissStats	crc_cache.h	/^    COUNTER ThreadDemandMissStats( UINT32 tid )$/;"	f	class:CRC_CACHE
+UINT32	utils.h	/^#define UINT32 /;"	d
+UTILS_H	utils.h	/^#define UTILS_H$/;"	d
+UpdateBRRIP	replacement_state.cpp	/^void CACHE_REPLACEMENT_STATE::UpdateBRRIP( UINT32 setIndex, INT32 updateWayID )$/;"	f	class:CACHE_REPLACEMENT_STATE
+UpdateLRU	replacement_state.cpp	/^void CACHE_REPLACEMENT_STATE::UpdateLRU( UINT32 setIndex, INT32 updateWayID )$/;"	f	class:CACHE_REPLACEMENT_STATE
+UpdateReplacementState	replacement_state.cpp	/^void CACHE_REPLACEMENT_STATE::UpdateReplacementState( $/;"	f	class:CACHE_REPLACEMENT_STATE
+UpdateSRRIP	replacement_state.cpp	/^void CACHE_REPLACEMENT_STATE::UpdateSRRIP( UINT32 setIndex, INT32 updateWayID )$/;"	f	class:CACHE_REPLACEMENT_STATE
+assoc	crc_cache.h	/^    UINT32 assoc;$/;"	m	class:CRC_CACHE
+assoc	replacement_state.h	/^    UINT32 assoc;$/;"	m	class:CACHE_REPLACEMENT_STATE
+cache	crc_cache.h	/^    LINE_STATE               **cache;$/;"	m	class:CRC_CACHE
+cacheReplState	crc_cache.h	/^    CACHE_REPLACEMENT_STATE  *cacheReplState;$/;"	m	class:CRC_CACHE
+crc_access_names	crc_cache.cpp	/^string crc_access_names[] =$/;"	v
+dirty	crc_cache_defs.h	/^    bool        dirty;       \/\/ Is line dirty?$/;"	m	struct:__anon1
+hits	crc_cache.h	/^    COUNTER *hits[ ACCESS_MAX ];$/;"	m	class:CRC_CACHE
+indexMask	crc_cache.h	/^    UINT32 indexMask;$/;"	m	class:CRC_CACHE
+indexShift	crc_cache.h	/^    UINT32 indexShift;$/;"	m	class:CRC_CACHE
+lineShift	crc_cache.h	/^    UINT32 lineShift;$/;"	m	class:CRC_CACHE
+linesize	crc_cache.h	/^    UINT32 linesize;$/;"	m	class:CRC_CACHE
+lookups	crc_cache.h	/^    COUNTER *lookups[ ACCESS_MAX ];$/;"	m	class:CRC_CACHE
+misses	crc_cache.h	/^    COUNTER *misses[ ACCESS_MAX ];$/;"	m	class:CRC_CACHE
+mytimer	crc_cache.h	/^    COUNTER mytimer; $/;"	m	class:CRC_CACHE
+mytimer	replacement_state.h	/^    COUNTER mytimer;  \/\/ tracks # of references to the cache$/;"	m	class:CACHE_REPLACEMENT_STATE
+numsets	crc_cache.h	/^    UINT32 numsets;$/;"	m	class:CRC_CACHE
+numsets	replacement_state.h	/^    UINT32 numsets;$/;"	m	class:CACHE_REPLACEMENT_STATE
+repl	replacement_state.h	/^    LINE_REPLACEMENT_STATE   **repl;$/;"	m	class:CACHE_REPLACEMENT_STATE
+replPolicy	crc_cache.h	/^    UINT32 replPolicy;$/;"	m	class:CRC_CACHE
+replPolicy	replacement_state.h	/^    UINT32 replPolicy;$/;"	m	class:CACHE_REPLACEMENT_STATE
+sharing_dir	crc_cache_defs.h	/^    BITVECTOR   sharing_dir; \/\/ Directory of which core accessed this line$/;"	m	struct:__anon1
+tag	crc_cache_defs.h	/^    Addr_t      tag;         \/\/ Tag of line$/;"	m	struct:__anon1
+threads	crc_cache.h	/^    UINT32 threads;$/;"	m	class:CRC_CACHE
+valid	crc_cache_defs.h	/^    bool        valid;       \/\/ Is line valid?$/;"	m	struct:__anon1
