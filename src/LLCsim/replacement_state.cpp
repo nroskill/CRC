@@ -103,7 +103,9 @@ INT32 CACHE_REPLACEMENT_STATE::GetVictimInSet( UINT32 tid, UINT32 setIndex, cons
         case CRC_REPL_BRRIP:
             return Get_SRRIP_Victim( setIndex );
         case CRC_REPL_SFRRIP1:
+        case CRC_REPL_BFRRIP1:
             return Get_SFRRIP1_Victim( setIndex );
+        case CRC_REPL_BFRRIP2:
         case CRC_REPL_SFRRIP2:
             return Get_SFRRIP2_Victim( setIndex );
         default:
@@ -136,12 +138,12 @@ void CACHE_REPLACEMENT_STATE::UpdateReplacementState(
             break;
         case CRC_REPL_RANDOM:
             break;
-        case CRC_REPL_SRRIP:
-            UpdateSRRIP( setIndex, updateWayID );
-            break;
         case CRC_REPL_BRRIP:
+        case CRC_REPL_BFRRIP1:
+        case CRC_REPL_BFRRIP2:
             UpdateBRRIP( setIndex, updateWayID );
             break;
+        case CRC_REPL_SRRIP:
         case CRC_REPL_SFRRIP1:
         case CRC_REPL_SFRRIP2:
             UpdateSFRRIP( setIndex, updateWayID );
@@ -277,14 +279,6 @@ INT32 CACHE_REPLACEMENT_STATE::Get_Random_Victim( UINT32 setIndex )
 // way and set index.                                                         //
 //                                                                            //
 ////////////////////////////////////////////////////////////////////////////////
-void CACHE_REPLACEMENT_STATE::UpdateSRRIP( UINT32 setIndex, INT32 updateWayID )
-{
-    if(repl[ setIndex ][ updateWayID ].RRPV == 4)
-        repl[ setIndex ][ updateWayID ].RRPV = 2;
-    else
-        repl[ setIndex ][ updateWayID ].RRPV = 0;
-}
-
 void CACHE_REPLACEMENT_STATE::UpdateSFRRIP( UINT32 setIndex, INT32 updateWayID )
 {
     if(repl[ setIndex ][ updateWayID ].RRPV == 4)
@@ -309,9 +303,15 @@ void CACHE_REPLACEMENT_STATE::UpdateBRRIP( UINT32 setIndex, INT32 updateWayID )
             repl[ setIndex ][ updateWayID ].RRPV = 2;
         else
             repl[ setIndex ][ updateWayID ].RRPV = 3;
+        repl[ setIndex ][ updateWayID ].UsedTimes = 0;
+        repl[ setIndex ][ updateWayID ].AllTimes = 0;
     }
     else
         repl[ setIndex ][ updateWayID ].RRPV = 0;
+    repl[ setIndex ][ updateWayID ].UsedTimes++;
+
+    for(UINT32 way=0; way<assoc; way++)
+        repl[ setIndex ][ way ].AllTimes++;
 }
 
 void CACHE_REPLACEMENT_STATE::UpdateLRU( UINT32 setIndex, INT32 updateWayID )
@@ -319,12 +319,8 @@ void CACHE_REPLACEMENT_STATE::UpdateLRU( UINT32 setIndex, INT32 updateWayID )
     UINT32 currLRUstackposition = repl[ setIndex ][ updateWayID ].LRUstackposition;
 
     for(UINT32 way=0; way<assoc; way++) 
-    {
         if( repl[setIndex][way].LRUstackposition < currLRUstackposition ) 
-        {
             repl[setIndex][way].LRUstackposition++;
-        }
-    }
 
     repl[ setIndex ][ updateWayID ].LRUstackposition = 0;
 }

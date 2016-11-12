@@ -29,7 +29,9 @@ typedef enum
     CRC_REPL_SRRIP      = 2,
     CRC_REPL_BRRIP      = 3,
     CRC_REPL_SFRRIP1    = 4,
-    CRC_REPL_SFRRIP2    = 5
+    CRC_REPL_SFRRIP2    = 5,
+    CRC_REPL_BFRRIP1    = 6,
+    CRC_REPL_BFRRIP2    = 7
 } ReplacemntPolicy;
 
 // Replacement State Per Cache Line
@@ -86,7 +88,6 @@ class CACHE_REPLACEMENT_STATE
     INT32  Get_SFRRIP2_Victim( UINT32 setIndex );
 
     void   UpdateLRU( UINT32 setIndex, INT32 updateWayID );
-    void   UpdateSRRIP( UINT32 setIndex, INT32 updateWayID );
     void   UpdateBRRIP( UINT32 setIndex, INT32 updateWayID );
     void   UpdateSFRRIP( UINT32 setIndex, INT32 updateWayID );
 };
